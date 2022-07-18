@@ -64,6 +64,8 @@ for file in json_files:
             print('Improper label. Ooops!')
             sys.exit()
         cropped_img.save(save_directory + file.replace('.json','')+'_'+label+'_'+str(label_dict[label])+'.jpg')
-        
+        with open('cropped_images.txt', 'a') as t:
+            print(true_jpg_path + ',' + label, file=t)
+
 print('Successful cropping.')
     
